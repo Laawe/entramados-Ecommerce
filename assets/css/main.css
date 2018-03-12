@@ -41,7 +41,7 @@
 
 	table {
 		border-collapse: collapse;
-		border-spacing: 0;
+		border-spacing: 1;
 	}
 
 	body {
@@ -1165,6 +1165,7 @@
 	p {
 		text-align: justify;
 		margin-bottom: 2em;
+		margin: 3em;
 	}
 
 	ul, ol, dl, table, blockquote {
@@ -1241,6 +1242,7 @@
 	ul.default {
 		list-style: disc;
 		margin-left: 1em;
+
 	}
 
 		ul.default li {
@@ -1286,7 +1288,9 @@
 
 	ul.icons > li {
 		position: relative;
-		padding: 2em 0 0 3em;
+		padding: 2em 0 0 2em;
+		left: 5em;
+
 	}
 
 		ul.icons > li:before {
@@ -1304,6 +1308,7 @@
 			box-shadow: 0.125em 0.175em 0 0 rgba(0, 0, 0, 0.125);
 		}
 
+
 		ul.icons > li:first-child {
 			padding-top: 0;
 		}
@@ -1314,7 +1319,7 @@
 
 	ol.default {
 		list-style: decimal;
-		margin-left: 1em;
+		margin-left: 2em;
 	}
 
 		ol.default li {
@@ -1434,6 +1439,26 @@
 				background: #F0F0F0;
 				border-top: solid 2px #E5E5E5;
 			}
+
+			#shop-Card{
+				min-height: 20rem!important;
+				height: auto;
+				margin: 6rem 0 0 0;
+				padding: 1rem 0 0 1rem;
+			}
+
+			#total{
+				font-size: 1.5rem !important;
+				height: auto;
+				margin: 6rem 0 0 8rem;
+				padding: 1rem 0 0 1rem;
+			}
+
+			#footer{
+				margin-top: 4rem;
+				
+			}
+
 
 /* Button */
 
