@@ -1,3 +1,125 @@
+# ENTRAMADOS e-comerce #
+### V1.0.0
+<img src=assets/images/LOGO.png>
+
+## Tabla de Contenido
+1. [Descripción de producto](#descripcion)
+2. [Descripción funcional](#descripcion-func)
+    1. [Navegación](#navegacion)
+3. [Fundamentos del producto](#fundamentos)
+    1. [Usuario objetivo](#usuario)
+    2. [Research](#research)
+    3. [Problemas a resolver para el usuario](#problemas)
+4. [Planeación](#planeacion)
+
+## <a name="descripcion"></a> Descripción de producto:
+- Entramados e-comerce es una app móvil dedicada a la difusión y venta de téxtiles artesanales de marca propia "Entramados", al igual que ofertar otros productos artesanales, a través del catálogo de mercado libre.
+- Con esta app, el usuario tendrá a su disposición lo siguiente:
+    - Conocer la marca Entramados, sus productos, técnicas, identidad etc.
+    - Consultar el catálogo de productos y realizar la seleccion de uno o varios para el carrito de compras.
+    - Visualizar el carrito de compras con los productos secllecionados.
+    - Poder pagar la orden mediante paypal, uno de los métodos de pago en línea, más seguros y accesibles vía web.
+    - Confirmar compra y obtener un folio.
+
+## <a name="descripcion-func"></a> Descripción funcional:
+
+- Interfaz intuitiva y de flujo sencillo para el usuario por medio de diferentes secciones:
+    - Home. Conoce Entramados y nuestra identidad.
+    - Sección "Productos" con sus respectivas líneas ropa, ornamentacion y accesorios.
+    - Sección Técnicas textiles (Telar conolial, telar de cintura, bordado y tintes naturales.)
+    - Mis artículos seleccionados en el carrito de compras, con nombre del producto y total.
+    - Botón de pago Paypal
+    - En el footer encontramos formas de contactos y social media.
+    - Uso de APIs.
+    - Términos y condiciones.
+
+- <a name="navegacion"></a> Acerca de la navegación:
+    - **Navegación No Lineal**: Uso de tabs para facilitar la navegación del usuario para que sea consistente y fácilmente identificable y que pueda saltar de una sección a otra.
+    - Arquitectura de la información con base en los conceptos SPA y el patrón de arquitectura de software MVC.
+
+## <a name="fundamentos"></a> Fundamentos del producto:
+
+- ## <a name="usuario"></a> Usuario Objetivo:
+    - Mujeres y hombres mayores de edad que aprecian técnicas con amplia tradición para la elaboración de téxtiles.
+    - Compradores de piezas artesanales.
+
+- ## <a name="research"></a> Research:
+    - Herramienta utilizada: ¿?
+    - Resultados del research
+        -¿?
+        -¿?
+        -¿?
+
+- ### <a name="problemas"></a> Problemas a Resolver para el usuario:
+    - Simplificar que los usuarios nos conozcan y puedan comprar de nuestros productos en el mismo sitio.
+    - Proceso de pago amigable con integración a una plataforma ampliamente conocida como Paypal.
+
+## <a name="planeacion"></a> Planeación:
+
+Utilización de Trello y github en modo colaborativo para la organización, asignación de tareas, deadlines, commmits, resolución de issues y merge en un solo repositiorio master.
+
+Liga del tablero de Trello: [Aquí](https://trello.com/b/6c1LhyKL/e-comerce)
+
+![TrelloView](/assets/images/IMAGEN TRELLO.png)
+
+Se tiene una retrospectiva y feedback diarios para ver lista de actividades que ya se realizaron, tareas por hacer a la par de asignar responsables .
+
+## <a name="sketching"></a> Sketching y Descripciones ##
+
+- *Vistas del sitio*:
+
+    1. Home
+    	1.1. Productos
+    	1.2. Técnicas textiles
+			1.3. Contacto
+    2. Carrito de compras
+			2.1 Productos
+			2.2 Mis artículos seleccionados
+			2.3. Contacto
+
+
+1.  <a name="sketch-login"></a>**HOME**
+    - <img src=assets/images/Sketches/INDEX.HTML.png>
+    - Sección principal con menú dropdown:
+        - Nuevos Productos:
+            1.1-Visualización de los productos con foto, descripción y precio.
+	            - Botón de agregar al carrito.
+						1.2- Técnicas textiles
+							-Taller de tintes naturales.
+			        -Taller de bordado.
+							-Taller de telar de cintura.
+							-Sobre el telar Coloniar.
+        - :
+            - Botón de conocer más para ampliar información.
+    				1.3-Footer con formas de contacto y ligas a nuestras redes sociales.
+						-Dirección
+						-Teléfono
+						-Correo
+						-Instagram
+						-Facebook
+						-Twitter
+
+					-Copyrigth
+2.  <a name="sketch-login"></a>**HOME**
+		- <img src=assets/images/Sketches/SCKETCH NO-SIDE BAR.png>
+		- Sección principal con menú dropdown:
+			2.1-Catálogo de productos:
+					  -Visualización de los productos con foto, descripción y precio.
+						- Botón de agregar al carrito.
+			2.2- Mis artículos seleccionados
+						-Tabla con nombre y precio del producto
+						- Botón para pagar con Paypal.
+					        - :
+
+			1.3-Footer con formas de contacto y ligas a nuestras redes sociales.
+			-Dirección
+			-Teléfono
+			-Correo
+			-Instagram
+			-Facebook
+			-Twitter
+
+
 Strongly Typed by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
