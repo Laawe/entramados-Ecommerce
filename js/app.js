@@ -66,13 +66,14 @@ const drawProductsIndex = (entramados => {
 	template = "";
 	entramados.forEach(product => {
 		template += `
-		<div class="4u 12u(mobile)">
+		<div class="6u 11u(mobile)">
 			<section>
 				<header>
 				<h3>${product.title}</h3>
 				</header>
 					<a href="#" class="image featured"><img src="${product.photo}" alt="" /></a>
-						<p><strong>Precio: </strong>${product.price}</p>
+						<p><strong>Precio: </strong>${product.price} <br/>
+						<strong>Estado: </strong>${product.state}</p>
 						<button id='${product.id}' data-id=${product.id}
 						onclick="changeButtonStatus(${product.id})"
 						class='button-Change' type="click" disabled>
