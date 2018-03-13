@@ -1,10 +1,21 @@
-template = "";
-console.log(entramados[0].id);
-//para función drawProductsIndex
+//contenedor para función drawProductsIndex
 let row = document.getElementById("container-products");
 //firebase
 let buttonLogin = document.getElementById("button-index");
 
+
+
+const theCounter = () =>{
+	let counter = document.getElementById("counterItems");  
+	let arrayProducts = localStorage.getItem("emptyArray")
+  //Convertir a Array
+	let productsArr =(JSON.parse(arrayProducts)).length;
+	//console.log(productsArr);
+	counter.innerText = productsArr;
+}
+
+
+// Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
 let emptyArray = [];
 const addToCart = (id => {
 	console.log(id);
@@ -12,20 +23,22 @@ const addToCart = (id => {
 	//console.log(products);
 	emptyArray.push(products);
 	//console.log(emptyArray);
-
 	localStorage.setItem("emptyArray", JSON.stringify(emptyArray));
-
-	increseCounter ();
-
-
+	theCounter();
 	})
+
+
 
 const removeFromCart = (id => {
 	console.log(id)
-})	
+});
 
-const changeButtonStatus = (id =>{ //función que se detona después del click de los botones "agregar carrito"
+
+
+// Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
+const changeButtonStatus = (id =>{ 
 	let buttonToCart = document.getElementById(id);
+	console.log(id);
 	//console.log(buttonToCart);
 	//console.log(buttonToCart.id);
 
@@ -39,8 +52,8 @@ const changeButtonStatus = (id =>{ //función que se detona después del click d
 })
 
 
-
-const disabledFalse = (buttons => { //Habilitando el botón después del login con firebase
+// Habilitando el botón después del login con firebase----------------------------------------------------------------------------------------------
+const disabledFalse = (buttons => { 
 	let button = Array.from(buttons);
 	button.forEach(item => {
 		item.disabled = false;
@@ -48,8 +61,9 @@ const disabledFalse = (buttons => { //Habilitando el botón después del login c
 })
 
 
-
+// Función para pintar data----------------------------------------------------------------------------------------------
 const drawProductsIndex = (entramados => {
+	template = "";
 	entramados.forEach(product => {
 		template += `
 		<div class="4u 12u(mobile)">
@@ -108,7 +122,7 @@ function authentication(provider) {
 		
 			var user = result.user;
 
-			buttonLogin.innerText = "Cerrar Sesión"
+			buttonLogin.innerText = "Log out";
 			
 			let buttons = document.getElementsByClassName("button-Change");
 			disabledFalse(buttons);	 //llamando a la función que habilita los botones
