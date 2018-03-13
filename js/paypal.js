@@ -1,5 +1,6 @@
 let productsContainer = document.getElementById('table-checkout');
 console.log(productsContainer)
+let containerAllTable = document.getElementById("content");
 
 let counterCheckuot = document.getElementById("counterItems");
 console.log(counterCheckuot)
@@ -10,6 +11,20 @@ counterCheckuot.innerText = lengthArrayProducts;
 
 
 let sumTotalPrice = 0;
+
+function showConfirmation(){
+    containerAllTable.setAttribute("style", "display:none");
+    let templateConfirm = `
+    <div class=12u 12u(mobile)>
+        <h1 id="logo">¡Gracias por su compra!</h1>
+    </div>
+    `
+
+    let containerConfirm = document.getElementById("main");
+    main.innerHTML= templateConfirm;
+    let wrapper = document.getElementById("main-wrapper");
+    wrapper.appendChild(main);
+}
 
 paypal.Button.render({
 
@@ -47,7 +62,7 @@ paypal.Button.render({
         // Make a call to the REST api to execute the payment
         return actions.payment.execute().then(function (data) {
             // window.alert('Payment Complete!');
-            showConfirmation(data.cart);
+            showConfirmation();
         });
     }
 
@@ -76,10 +91,6 @@ function calculateTotal(json) {
     payment(sumTotalPrice);
 
 }
-
-
-
-
 function createTemplate(product) {
     let name = product.title;
     let price = product.price;
