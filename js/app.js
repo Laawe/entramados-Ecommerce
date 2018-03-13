@@ -6,7 +6,7 @@ let buttonLogin = document.getElementById("button-index");
 
 
 const theCounter = () =>{
-	let counter = document.getElementById("counterItems");  
+	let counter = document.getElementById("counterItems");
 	let arrayProducts = localStorage.getItem("emptyArray");
   //Convertir a Array
 	let productsArr =(JSON.parse(arrayProducts)).length;
@@ -18,11 +18,14 @@ const theCounter = () =>{
 // Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
 let emptyArray = [];
 const addToCart = (id => {
-	console.log(id);
-	let products = entramados[id];
-	//console.log(products);
-	emptyArray.push(products);
-	//console.log(emptyArray);
+//console.log(entramadosML)
+let entramadosAll = entramados.concat(entramadosML);
+console.log(entramadosAll);
+	let products = entramadosAll[id];
+	// let products = event.target.dataset.id
+	//  let concat = products.concat(products2)
+
+		emptyArray.push(products)
 	localStorage.setItem("emptyArray", JSON.stringify(emptyArray));
 	theCounter();
 	})
@@ -36,15 +39,15 @@ const removeFromCart = (id => {
 
 
 // Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
-const changeButtonStatus = (id =>{ 
+const changeButtonStatus = (id =>{
 	let buttonToCart = document.getElementById(id);
-	console.log(id);
+	//console.log(buttonToCart);
 	//console.log(buttonToCart);
 	//console.log(buttonToCart.id);
 
 	if (buttonToCart.innerText ==="Agregar a carrito"){
 		buttonToCart.innerText = "Quitar del carrito";
-		addToCart(buttonToCart.id);	
+		addToCart(buttonToCart.id);
 	}else{
 		buttonToCart.innerText = "Agregar a carrito"
 		removeFromCart(buttonToCart.id);
@@ -53,11 +56,12 @@ const changeButtonStatus = (id =>{
 
 
 // Habilitando el botón después del login con firebase----------------------------------------------------------------------------------------------
-const disabledFalse = (buttons => { 
+const disabledFalse = (buttons => {
 	let button = Array.from(buttons);
+
 	button.forEach(item => {
 		item.disabled = false;
-	}) 
+	})
 })
 
 
@@ -84,12 +88,13 @@ const drawProductsIndex = (entramados => {
 		</div>
 		`
 	});
+
 	let html = document.createElement("div");
 	html.classList.add("row")
 	html.innerHTML = template;
 	row.appendChild(html);
 	//
-	
+
 })
 
 drawProductsIndex(entramados);
@@ -118,25 +123,25 @@ function authGoogle() {
 
 function authentication(provider) {
 	firebase.auth().signInWithPopup(provider).then(function (result) {
-			
+
 			var token = result.credential.accessToken;
-		
+
 			var user = result.user;
 
 			buttonLogin.innerText = "Log out";
-			
+
 			let buttons = document.getElementsByClassName("button-Change");
 			disabledFalse(buttons);	 //llamando a la función que habilita los botones
 		})
 		.catch(function (error) {
-			
+
 			var errorCode = error.code;
 			var errorMessage = error.message;
 
-			
+
 			var email = error.email;
 
-			
+
 			var credential = error.credential;
 
 		});
