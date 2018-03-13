@@ -7,7 +7,7 @@ let buttonLogin = document.getElementById("button-index");
 
 const theCounter = () =>{
 	let counter = document.getElementById("counterItems");  
-	let arrayProducts = localStorage.getItem("emptyArray")
+	let arrayProducts = localStorage.getItem("emptyArray");
   //Convertir a Array
 	let productsArr =(JSON.parse(arrayProducts)).length;
 	//console.log(productsArr);
