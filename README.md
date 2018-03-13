@@ -1,6 +1,8 @@
 # ENTRAMADOS e-comerce #
 ### V1.0.0
-<img src=assets/images/LOGO.png>
+
+<img src=assets/images/.png>
+
 
 ## Tabla de Contenido
 1. [Descripción de producto](#descripcion)
@@ -13,12 +15,15 @@
 4. [Planeación](#planeacion)
 
 ## <a name="descripcion"></a> Descripción de producto:
-- Entramados e-comerce es una app móvil dedicada a la difusión y venta de téxtiles artesanales de marca propia "Entramados", al igual que ofertar otros productos artesanales, a través del catálogo de mercado libre.
+
+- Actualmente entramados e-comerce es una app móvil dedicada a la difusión y venta de téxtiles artesanales de marca propia "Entramados", en un principio nos dedicamos a filtrar uno de los catálogos en línea, más grandes de latinoamerica para ofrecer únicamente productos artesanales al público interesado en esta gama específica. A la par, decidimos incursionar en este mercado con nuestra propia línea de productos con base en un amplio conocimiento en la ejecución de técnicas téxtiles artesanales.
 - Con esta app, el usuario tendrá a su disposición lo siguiente:
-    - Conocer la marca Entramados, sus productos, técnicas, identidad etc.
-    - Consultar el catálogo de productos y realizar la seleccion de uno o varios para el carrito de compras.
+    - Conocer la marca Entramados y sus productos y realizar la seleccion de uno o varios productos para colocarlos en el carrito de compras.
+    - Consultar el catálogo de productos proveniente de mercado libre y realizar la seleccion de uno o varios productos para colocarlos en el carrito de compras.
     - Visualizar el carrito de compras con los productos secllecionados.
     - Poder pagar la orden mediante paypal, uno de los métodos de pago en línea, más seguros y accesibles vía web.
+    - Para quienes no cuentan con una tarjeta bancaria vinculada a paypal, ofrecemos un método alternativo de pago      (mercado pago).
+
     - Confirmar compra y obtener un folio.
 
 ## <a name="descripcion-func"></a> Descripción funcional:
@@ -41,22 +46,27 @@
 
 - ## <a name="usuario"></a> Usuario Objetivo:
     - Mujeres y hombres mayores de edad que aprecian técnicas con amplia tradición para la elaboración de téxtiles.
-    - Compradores de piezas artesanales.
+
+    - Compradores de piezas artesanales y coleccionistas.
 
 - ## <a name="research"></a> Research:
-    - Herramienta utilizada: ¿?
+    - Herramienta utilizada: ¿Testing con posibles usuarios?
+
     - Resultados del research
         -¿?
         -¿?
         -¿?
 
 - ### <a name="problemas"></a> Problemas a Resolver para el usuario:
-    - Simplificar que los usuarios nos conozcan y puedan comprar de nuestros productos en el mismo sitio.
+
+    - Plataforma que ofrece productos para un nicho de mercado muy especializado, pues no es necesario que naveguen en un enorme sitio con miles de productos diversos para encontrar lo que buscan, a la par pone a la disposición del usuario, productos de varias regiones sin necesidad de viajar a todos estos sitios. Simplificar que los usuarios nos conozcan y puedan comprar de nuestros productos en el mismo sitio.
     - Proceso de pago amigable con integración a una plataforma ampliamente conocida como Paypal.
+    -Alternativa para quienes no usan paypal.
 
 ## <a name="planeacion"></a> Planeación:
 
-Utilización de Trello y github en modo colaborativo para la organización, asignación de tareas, deadlines, commmits, resolución de issues y merge en un solo repositiorio master.
+Utilizamos de Trello y github en modo colaborativo para la organización, asignación de tareas, deadlines, commmits, resolución de issues y merge en un solo repositiorio master.
+
 
 Liga del tablero de Trello: [Aquí](https://trello.com/b/6c1LhyKL/e-comerce)
 
