@@ -1457,7 +1457,6 @@
 		display: inline-block;
 		background: #B40486;
 		color: #fff !important;
-		text-transform: uppercase;
 		border-radius: 4px;
 		border: 0;
 		outline: 0;
@@ -1574,7 +1573,7 @@
 	}
 
 		#banner-wrapper .inner {
-			background: url("../img/rebozon.jpg");
+			background: url("../assets/img/rebozon.jpg");
 			background-size: cover;
 		}
 
