@@ -1,9 +1,9 @@
 let productsContainer = document.getElementById('table-checkout');
-console.log(productsContainer)
+//console.log(productsContainer)
 let containerAllTable = document.getElementById("content");
 
 let counterCheckuot = document.getElementById("counterItems");
-console.log(counterCheckuot)
+//console.log(counterCheckuot)
 //Tomar del localStorage y colocar en contador la cantdad de items en el array
 let arrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
 let lengthArrayProducts = arrayProducts.length
