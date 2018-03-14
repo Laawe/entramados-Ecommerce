@@ -109,7 +109,7 @@ const drawProductsIndex = (entramados => {
 				<h3>${product.title}</h3>
 				</header>
 					<a href="#" class="image featured"><img src="${product.photo}" alt="" /></a>
-						<p><strong>Precio: </strong>${product.price}.00 MXN<br/>
+						<p><strong>Precio: </strong>${product.price} MXN<br/>
 						<strong>Estado: </strong>${product.state}</p>
 						<p> <strong> Descripción: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, esse tempore vero ab voluptatum tempora incidunt ut inventore aliquid, dicta, nam error ipsam. Quod doloremque perspiciatis nostrum, eaque nulla qui!</p>
 						<button id='${product.id}' data-id=${product.id}

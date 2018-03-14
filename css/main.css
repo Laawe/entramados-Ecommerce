@@ -1099,7 +1099,7 @@
 		color: #777;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h3, h4, h5, h6 {
 		font-weight: 600;
 		text-transform: uppercase;
 		color: #888;
@@ -2494,4 +2494,18 @@
 				padding-top: 2em;
 			}
 
+	}
+
+	#filtro {
+	background-color: #fff;
+	border: 2px solid #B40486;
+	font-weight: 900;
+	margin: 2%;
+	padding: 2%;
+	color: #888;
+	text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
+	}
+	#filtro > h2{
+		margin: 0px;
+		padding: 1px;
 	}
