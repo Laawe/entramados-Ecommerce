@@ -1,10 +1,28 @@
 //contenedor para función drawProductsIndex
 let row = document.getElementById("container-products");
 //firebase
+//html
 let buttonLogin = document.getElementById("button-index");
+let input = document.getElementById('input-state')
+let select = document.getElementById('select')
+//select.addEventListener('change', searchCategory)
+input.addEventListener('keyup', searchItem)
 
+//6 función que detona después de búsqueda en el input
+function searchItem() {
+    let titles = document.getElementsByTagName('h3')
+    Array.from(titles).forEach(function(title){
+        let search = input.value
+        let titleText = title.innerText.trim().toLowerCase()
+        if(titleText.indexOf(search.trim().toLowerCase()) == -1){
+            title.parentNode.parentNode.parentNode.style.display = 'none'
+        } else {
+            title.parentNode.parentNode.parentNode.style.display = 'block'
+        }
+    })
+}
 
-// 5 función que se detona después de la función addToCart()
+// 5.1 función que se detona después de la función addToCart()
 const theCounter = () => {
 	let counter = document.getElementById("counterItems");
 	let arrayProducts = localStorage.getItem("emptyArray");
@@ -14,6 +32,7 @@ const theCounter = () => {
 	counter.innerText = productsArr;
 }
 
+//5.2
 const decreaseCounter = () => {
 	let counter = document.getElementById("counterItems");
 	let arrayProductsLess = localStorage.getItem("decreaseArray");
@@ -50,10 +69,7 @@ const addToCart = (id => {
 
 	emptyArray.push(products)
 	// console.log(emptyArray);
-
-
 	localStorage.setItem("emptyArray", JSON.stringify(emptyArray)); //se crea el Local Storage
-
 	theCounter();
 })
 
