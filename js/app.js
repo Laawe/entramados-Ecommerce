@@ -10,16 +10,16 @@ input.addEventListener('keyup', searchItem)
 
 //6 función que detona después de búsqueda en el input
 function searchItem() {
-    let titles = document.getElementsByTagName('h3')
-    Array.from(titles).forEach(function(title){
-        let search = input.value
-        let titleText = title.innerText.trim().toLowerCase()
-        if(titleText.indexOf(search.trim().toLowerCase()) == -1){
-            title.parentNode.parentNode.parentNode.style.display = 'none'
-        } else {
-            title.parentNode.parentNode.parentNode.style.display = 'block'
-        }
-    })
+	let titles = document.getElementsByTagName('h3')
+	Array.from(titles).forEach(function (title) {
+		let search = input.value
+		let titleText = title.innerText.trim().toLowerCase()
+		if (titleText.indexOf(search.trim().toLowerCase()) == -1) {
+			title.parentNode.parentNode.parentNode.style.display = 'none'
+		} else {
+			title.parentNode.parentNode.parentNode.style.display = 'block'
+		}
+	})
 }
 
 // 5.1 función que se detona después de la función addToCart()
@@ -148,7 +148,8 @@ var config = {
 firebase.initializeApp(config);
 
 
-buttonLogin.addEventListener("click", authGoogle)
+buttonLogin.addEventListener("click", authGoogle);
+let photo;
 
 function authGoogle() {
 	var provider = new firebase.auth.GoogleAuthProvider();
@@ -159,9 +160,22 @@ function authentication(provider) {
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 
 			var token = result.credential.accessToken;
-
+			//Local Storage
 			var user = result.user;
+			/*var name = user.displayName;
+			var photo = user.photoURL;
+			
+			//
+			
+			localStorage.photo = result.user.photoURL;
+			//*/
+			localStorage.setItem("photo", result.user.photoURL);
+			photo = document.getElementById("photo-user").setAttribute("src", localStorage.photo);
 
+
+
+
+			// Habilitando botón "Agregar carrito"
 			buttonLogin.innerText = "Log out";
 
 			let buttons = document.getElementsByClassName("button-Change");
@@ -180,3 +194,18 @@ function authentication(provider) {
 
 		});
 }
+
+function newPhoto() {
+	// console.log("hola")
+	// localStorage.getItem("photo");
+	// let newPhoto = document.getElementById("photo-user").setAttribute("src", localStorage.photo);
+	//
+	let counterCheckuot = document.getElementById("counterItems");
+	//console.log(counterCheckuot)
+	//Tomar del localStorage y colocar en contador la cantdad de items en el array
+	let arrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
+	let lengthArrayProducts = arrayProducts.length
+	counterCheckuot.innerText = lengthArrayProducts;
+}
+
+newPhoto();
