@@ -1,9 +1,14 @@
+//contenedor para función drawProductsIndex
+let row = document.getElementById("container-products");
+//firebase
+//html
+let buttonLogin = document.getElementById("button-index");
 let input = document.getElementById('input-state')
 let select = document.getElementById('select')
 //select.addEventListener('change', searchCategory)
 input.addEventListener('keyup', searchItem)
 
-
+//6 función que detona después de búsqueda en el input
 function searchItem() {
     let titles = document.getElementsByTagName('h3')
     Array.from(titles).forEach(function(title){
@@ -17,82 +22,73 @@ function searchItem() {
     })
 }
 
-
-//contenedor para función drawProductsIndex
-let row = document.getElementById("container-products");
-//firebase
-let buttonLogin = document.getElementById("button-index");
-
-
-
-const theCounter = () =>{
+// 5.1 función que se detona después de la función addToCart()
+const theCounter = () => {
 	let counter = document.getElementById("counterItems");
 	let arrayProducts = localStorage.getItem("emptyArray");
-  //Convertir a Array
-	let productsArr =(JSON.parse(arrayProducts)).length;
-	//console.log(productsArr);
+
+	let productsArr = (JSON.parse(arrayProducts)).length;
+
 	counter.innerText = productsArr;
 }
 
-// const decressCounter = ()=>{
-// 	let counter = document.getElementById("counterItems");
-// 	let arrayProductsLess = localStorage.getItem("itemResult");
-//   //Convertir a Array
-// 	let productsArrLess =(JSON.parse(arrayProductsLess)).length;
-// 	//console.log(productsArr);
-// 	counter.innerText = productsArrLess;
-// }
+//5.2
+const decreaseCounter = () => {
+	let counter = document.getElementById("counterItems");
+	let arrayProductsLess = localStorage.getItem("decreaseArray");
+	//Convertir a Array
+	let productsArrLess = (JSON.parse(arrayProductsLess)).length;
+	//console.log(productsArr);
+	counter.innerText = productsArrLess;
+}
 
-// Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
-let emptyArray = [];
-const addToCart = (id => {
-//console.log(entramadosML)
-let entramadosAll = entramados.concat(entramadosML);
-//console.log(entramadosAll);
-	let products = entramadosAll[id];
-	console.log(products);
-	// let products = event.target.dataset.id
-	//  let concat = products.concat(products2)
-
-		emptyArray.push(products)
-		console.log(emptyArray);
-	localStorage.setItem("emptyArray", JSON.stringify(emptyArray));
-	theCounter();
-	})
-
-
-
+// 4.2 Función que se detona al dar click "Quitar carrito"--------------------------
 const removeFromCart = (id => {
-	console.log(id)
+	// console.log(id)
 	let totalArrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
+	///console.log(totalArrayProducts);
+	let indexes = totalArrayProducts.indexOf(id)
+	console.log(indexes);
+
+	//
+	let split = totalArrayProducts.splice(indexes);
+	console.log(split);
 	console.log(totalArrayProducts);
-	let itemResult = totalArrayProducts.filter(function(item){
-		return item.id != id
-	})
-	//poner este nuevo array en local storge o quiter este item del local storage anterior
-	console.log(itemResult);
+
+	localStorage.setItem("decreaseArray", JSON.stringify(totalArrayProducts));
+
+	decreaseCounter(); //////////////paypal
 });
 
+//4.1 Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
+let emptyArray = [];
+const addToCart = (id => {
+	let entramadosAll = entramados.concat(entramadosML); //entramadosML viene del archivo dataML.js
+
+	let products = entramadosAll[id];
+
+	emptyArray.push(products)
+	// console.log(emptyArray);
+	localStorage.setItem("emptyArray", JSON.stringify(emptyArray)); //se crea el Local Storage
+	theCounter();
+})
 
 
-// Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
-const changeButtonStatus = (id =>{
+//4 Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
+const changeButtonStatus = (id => {
 	let buttonToCart = document.getElementById(id);
-	//console.log(buttonToCart);
-	//console.log(buttonToCart);
-	//console.log(buttonToCart.id);
 
-	if (buttonToCart.innerText ==="Agregar a carrito"){
+	if (buttonToCart.innerText === "Agregar a carrito") {
 		buttonToCart.innerText = "Quitar del carrito";
 		addToCart(buttonToCart.id);
-	}else{
+	} else {
 		buttonToCart.innerText = "Agregar a carrito"
 		removeFromCart(buttonToCart.id);
 	}
 })
 
 
-// Habilitando el botón después del login con firebase----------------------------------------------------------------------------------------------
+//3 Habilitando el botón después del login con firebase----------------------------------------------------------------------------------------------
 const disabledFalse = (buttons => {
 	let button = Array.from(buttons);
 
@@ -102,7 +98,7 @@ const disabledFalse = (buttons => {
 })
 
 
-// Función para pintar data----------------------------------------------------------------------------------------------
+// 1 Función para pintar data----------------------------------------------------------------------------------------------
 const drawProductsIndex = (entramados => {
 	template = "";
 	entramados.forEach(product => {
@@ -140,7 +136,7 @@ drawProductsIndex(entramados);
 
 
 //firebase
-// Initialize Firebase
+// 2 Initialize Firebase
 var config = {
 	apiKey: "AIzaSyBrqYHRUUVgQlnvOjkUTWwYfRWvQ2KqwGY",
 	authDomain: "entramados-ecommerce.firebaseapp.com",
@@ -169,7 +165,7 @@ function authentication(provider) {
 			buttonLogin.innerText = "Log out";
 
 			let buttons = document.getElementsByClassName("button-Change");
-			disabledFalse(buttons);	 //llamando a la función que habilita los botones
+			disabledFalse(buttons); //llamando a la función que habilita los botones
 		})
 		.catch(function (error) {
 
