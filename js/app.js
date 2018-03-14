@@ -14,18 +14,28 @@ const theCounter = () =>{
 	counter.innerText = productsArr;
 }
 
+// const decressCounter = ()=>{
+// 	let counter = document.getElementById("counterItems");
+// 	let arrayProductsLess = localStorage.getItem("itemResult");
+//   //Convertir a Array
+// 	let productsArrLess =(JSON.parse(arrayProductsLess)).length;
+// 	//console.log(productsArr);
+// 	counter.innerText = productsArrLess;
+// }
 
 // Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
 let emptyArray = [];
 const addToCart = (id => {
 //console.log(entramadosML)
 let entramadosAll = entramados.concat(entramadosML);
-console.log(entramadosAll);
+//console.log(entramadosAll);
 	let products = entramadosAll[id];
+	console.log(products);
 	// let products = event.target.dataset.id
 	//  let concat = products.concat(products2)
 
 		emptyArray.push(products)
+		console.log(emptyArray);
 	localStorage.setItem("emptyArray", JSON.stringify(emptyArray));
 	theCounter();
 	})
@@ -34,6 +44,13 @@ console.log(entramadosAll);
 
 const removeFromCart = (id => {
 	console.log(id)
+	let totalArrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
+	console.log(totalArrayProducts);
+	let itemResult = totalArrayProducts.filter(function(item){
+		return item.id != id	
+	})
+	//poner este nuevo array en local storge o quiter este item del local storage anterior
+	console.log(itemResult);
 });
 
 
@@ -76,8 +93,9 @@ const drawProductsIndex = (entramados => {
 				<h3>${product.title}</h3>
 				</header>
 					<a href="#" class="image featured"><img src="${product.photo}" alt="" /></a>
-						<p><strong>Precio: </strong>${product.price} <br/>
+						<p><strong>Precio: </strong>${product.price}.00 MXN<br/>
 						<strong>Estado: </strong>${product.state}</p>
+						<p> <strong> Descripción: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, esse tempore vero ab voluptatum tempora incidunt ut inventore aliquid, dicta, nam error ipsam. Quod doloremque perspiciatis nostrum, eaque nulla qui!</p>
 						<button id='${product.id}' data-id=${product.id}
 						onclick="changeButtonStatus(${product.id})"
 						class='button-Change' type="click" disabled>
