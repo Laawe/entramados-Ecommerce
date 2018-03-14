@@ -1,3 +1,23 @@
+let input = document.getElementById('input-state')
+let select = document.getElementById('select')
+//select.addEventListener('change', searchCategory)
+input.addEventListener('keyup', searchItem)
+
+
+function searchItem() {
+    let titles = document.getElementsByTagName('h3')
+    Array.from(titles).forEach(function(title){
+        let search = input.value
+        let titleText = title.innerText.trim().toLowerCase()
+        if(titleText.indexOf(search.trim().toLowerCase()) == -1){
+            title.parentNode.parentNode.parentNode.style.display = 'none'
+        } else {
+            title.parentNode.parentNode.parentNode.style.display = 'block'
+        }
+    })
+}
+
+
 //contenedor para función drawProductsIndex
 let row = document.getElementById("container-products");
 //firebase
@@ -47,7 +67,7 @@ const removeFromCart = (id => {
 	let totalArrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
 	console.log(totalArrayProducts);
 	let itemResult = totalArrayProducts.filter(function(item){
-		return item.id != id	
+		return item.id != id
 	})
 	//poner este nuevo array en local storge o quiter este item del local storage anterior
 	console.log(itemResult);
