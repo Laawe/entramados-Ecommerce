@@ -22,7 +22,7 @@ function showConfirmation(){
 
     let containerConfirm = document.getElementById("main");
     main.innerHTML= templateConfirm;
-    let wrapper = document.getElementById("main-wrapper");
+    let wrapper = document.getElementById("cart-wrapper");
     wrapper.appendChild(main);
 }
 
@@ -88,7 +88,7 @@ function calculateTotal(json) {
     totalContainer.innerHTML = sumTotalPrice
     console.log(sumTotalPrice);
 
-    payment(sumTotalPrice);
+    //payment(sumTotalPrice);
 
 }
 function createTemplate(product) {

@@ -8,6 +8,19 @@ let select = document.getElementById('select')
 //select.addEventListener('change', searchCategory)
 input.addEventListener('keyup', searchItem)
 
+function clickTo(e, section) {
+	e.preventDefault();
+	let arrayProducts = JSON.parse(localStorage.getItem("emptyArray"));
+	calculateTotal(arrayProducts);
+	if (section == "home") {
+		document.getElementById("display-home").style.display = 'block';
+		document.getElementById("display-cart").style.display = 'none';
+	} else if (section = "cart"){
+		document.getElementById("display-home").style.display = 'none';
+		document.getElementById("display-cart").style.display = 'block';
+	}
+}
+
 //6 función que detona después de búsqueda en el input
 function searchItem() {
 	let titles = document.getElementsByTagName('h3')
