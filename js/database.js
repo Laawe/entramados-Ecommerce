@@ -90,13 +90,13 @@ entramados = [
         photo: "./assets/img/products/rebozo-cdmx.png",
         state:"CDMX", 
     },
-    {
-        title: "rebozo",
-        price: 700,
-        id: 13,
-        photo: "./assets/img/products/rebozo-cdmx1.jpg",
-        state:"CDMX", 
-    },
+    // {
+    //     title: "rebozo",
+    //     price: 700,
+    //     id: 13,
+    //     photo: "./assets/img/products/rebozo-cdmx1.jpg",
+    //     state:"CDMX", 
+    // },
     {
         title: "sarape",
         price: 900,
