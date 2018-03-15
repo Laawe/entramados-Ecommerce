@@ -34,7 +34,7 @@ function sectionChange(section) {
 		navigate('');
 		document.getElementById("display-home").style.display = 'block';
 		document.getElementById("display-cart").style.display = 'none';
-	} else if (section = "cart"){
+	} else if (section = "cart") {
 		navigate('cart')
 		document.getElementById("display-home").style.display = 'none';
 		document.getElementById("display-cart").style.display = 'block';
@@ -70,9 +70,11 @@ function searchItem() {
 function removeFromCart(id) {
 	let entramadosAll = entramados.concat(entramadosML); //entramadosML viene del archivo dataML.js
 	let product = entramadosAll[id];
-	let arrayProducts = localStorage.getItem("cartProducts") == null ?  [] : JSON.parse(localStorage.getItem("cartProducts"));
+	let arrayProducts = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
 	let sumTotalPrice = localStorage.getItem("sumTotalPrice") == null ? 0 : parseInt(localStorage.getItem("sumTotalPrice"));
-	arrayProducts = arrayProducts.filter(function(p){return p.id != product.id});
+	arrayProducts = arrayProducts.filter(function (p) {
+		return p.id != product.id
+	});
 	sumTotalPrice -= parseInt(product.price);
 	localStorage.setItem("cartProducts", JSON.stringify(arrayProducts)); //se crea el Local Storage
 	localStorage.setItem("sumTotalPrice", sumTotalPrice); //se crea el Local Storage
@@ -84,7 +86,7 @@ function removeFromCart(id) {
 function addToCart(id) {
 	let entramadosAll = entramados.concat(entramadosML); //entramadosML viene del archivo dataML.js
 	let product = entramadosAll[id];
-	let arrayProducts = localStorage.getItem("cartProducts") == null ?  [] : JSON.parse(localStorage.getItem("cartProducts"));
+	let arrayProducts = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
 	let sumTotalPrice = localStorage.getItem("sumTotalPrice") == null ? 0 : parseInt(localStorage.getItem("sumTotalPrice"));
 	arrayProducts.push(product);
 	sumTotalPrice += parseInt(product.price);
@@ -95,7 +97,7 @@ function addToCart(id) {
 };
 
 //4 Función que se detona después del click de los botones "agregar carrito"----------------------------------------------------------------------------------------------
-function changeButtonStatus (id) {
+function changeButtonStatus(id) {
 	let buttonToCart = document.getElementById(id);
 
 	if (buttonToCart.innerText === "Agregar a carrito") {
@@ -122,18 +124,18 @@ function authGoogle() {
 	if (!firebase.auth().currentUser) {
 		var provider = new firebase.auth.GoogleAuthProvider();
 		firebase.auth().signInWithPopup(provider).then(function (result) {
-			var token = result.credential.accessToken;
-			setUserInfo(result.user);
-      databaseFirebase(name);
-		})
-		.catch(function (error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
-			var email = error.email;
-			var credential = error.credential;
-		});
+				var token = result.credential.accessToken;
+				setUserInfo(result.user);
+				//databaseFirebase(name);
+			})
+			.catch(function (error) {
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				var email = error.email;
+				var credential = error.credential;
+			});
 	} else {
-		firebase.auth().signOut().then(function() {
+		firebase.auth().signOut().then(function () {
 			localStorage.removeItem('cartProducts');
 			localStorage.removeItem('sumTotalPrice');
 			location.reload();
@@ -151,10 +153,12 @@ function setUserInfo(user) {
 // 1 Función para pintar data----------------------------------------------------------------------------------------------
 function drawProductsIndex(entramados) {
 	let template = "";
-	let products = localStorage.getItem("cartProducts") == null ?  [] : JSON.parse(localStorage.getItem("cartProducts"));
+	let products = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
 	entramados.forEach(product => {
-		let exists = products.find(function(p){return p.id == product.id}); 
-		let buttonText = exists ? 'Quitar del carrito' : 'Agregar a carrito'; 
+		let exists = products.find(function (p) {
+			return p.id == product.id
+		});
+		let buttonText = exists ? 'Quitar del carrito' : 'Agregar a carrito';
 		template += `
 		<div class="6u 11u(mobile)">
 			<section>
@@ -194,7 +198,7 @@ function drawCart() {
 	let products = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
 	let sumTotalPrice = localStorage.getItem("sumTotalPrice") == null ? 0 : parseInt(localStorage.getItem("sumTotalPrice"));
 	let totalContainer = document.getElementById('total_container')
-	
+
 	cartProducts = document.getElementsByClassName('cart-product');
 	while (cartProducts.length > 0) {
 		cartProducts[0].remove();
@@ -208,7 +212,7 @@ function drawCart() {
 		tr.innerHTML = templateComplite
 		productsContainer.prepend(tr);
 	});
-    totalContainer.innerHTML = sumTotalPrice
+	totalContainer.innerHTML = sumTotalPrice
 }
 
 
@@ -224,7 +228,7 @@ function createTemplate(product) {
 }
 
 //funncion para imprimir confirmacion despues de pago
-function showConfirmation(){
+function showConfirmation() {
 	containerAllTable.setAttribute("style", "display:none");
 	let templateConfirm = `
 	<div class=12u 12u(mobile)>
@@ -233,7 +237,7 @@ function showConfirmation(){
 	`
 
 	let containerConfirm = document.getElementById("main");
-	main.innerHTML= templateConfirm;
+	main.innerHTML = templateConfirm;
 	let wrapper = document.getElementById("cart-wrapper");
 	wrapper.appendChild(main);
 }
@@ -318,11 +322,17 @@ drawCounter();
 getDataML();
 initSection();
 
+firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged(function(user){
+	if(user){
+		setUserInfo(user);
+	}
+});
 
 
-function databaseFirebase(name){
+
+function databaseFirebase(name) {
 	firebase.database().ref('users').set({
-        username: name
-    });
+		username: name
+	});
 }
-
