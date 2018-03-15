@@ -2499,7 +2499,6 @@
 	#filtro {
 	background-color: #fff;
 	border: 2px solid #B40486;
-	font-weight: 900;
 	margin: 2%;
 	padding: 2%;
 	color: #888;
@@ -2508,4 +2507,18 @@
 	#filtro > h2{
 		margin: 0px;
 		padding: 1px;
+	}
+
+	#right{
+		text-align: right;
+	}
+
+	#photo-user{
+		border-radius: 50%;
+	}
+	#button-index{
+		font-size: 2vh;
+		padding:1vh;
+		text-align: left;
+		box-sizing: content-box;
 	}
