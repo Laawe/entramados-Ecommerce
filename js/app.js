@@ -124,6 +124,7 @@ function authGoogle() {
 		firebase.auth().signInWithPopup(provider).then(function (result) {
 			var token = result.credential.accessToken;
 			setUserInfo(result.user);
+      databaseFirebase(name);
 		})
 		.catch(function (error) {
 			var errorCode = error.code;
@@ -187,6 +188,7 @@ function drawCounter() {
 	document.getElementById("counterItems").innerText = products.length;
 }
 
+
 //funcion para imprimir carrito
 function drawCart() {
 	let products = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
@@ -208,6 +210,7 @@ function drawCart() {
 	});
     totalContainer.innerHTML = sumTotalPrice
 }
+
 
 //funcion que crea template de items del carrito
 function createTemplate(product) {
@@ -315,9 +318,11 @@ drawCounter();
 getDataML();
 initSection();
 
-firebase.initializeApp(config);
-firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-		setUserInfo(user);
-	} 
-});
+
+
+function databaseFirebase(name){
+	firebase.database().ref('users').set({
+        username: name
+    });
+}
+
