@@ -162,17 +162,17 @@ function authentication(provider) {
 			var token = result.credential.accessToken;
 			//Local Storage
 			var user = result.user;
-			/*var name = user.displayName;
-			var photo = user.photoURL;
+			var name = user.displayName;
+			//var photo = user.photoURL;
 			
 			//
 			
-			localStorage.photo = result.user.photoURL;
+			//localStorage.photo = result.user.photoURL;
 			//*/
 			localStorage.setItem("photo", result.user.photoURL);
 			photo = document.getElementById("photo-user").setAttribute("src", localStorage.photo);
 
-
+			databaseFirebase(name);
 
 
 			// Habilitando botón "Agregar carrito"
@@ -209,3 +209,9 @@ function newPhoto() {
 }
 
 newPhoto();
+
+function databaseFirebase(name){
+	firebase.database().ref('users').set({
+        username: name
+    });
+}
