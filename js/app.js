@@ -186,6 +186,7 @@ function drawProductsIndex(entramados) {
 	row.appendChild(html);
 };
 
+
 //funcion para pintar contador
 function drawCounter() {
 	let products = localStorage.getItem("cartProducts") == null ? [] : JSON.parse(localStorage.getItem("cartProducts"));
