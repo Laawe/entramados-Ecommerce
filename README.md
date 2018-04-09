@@ -1,18 +1,33 @@
 # ENTRAMADOS e-comerce #
+
+### Vista previa 
+
+<img src=assets/img/screencapture.png>
+
 ### V1.0.0
 
 <img src=assets/img/logo-entramados.jpg>
 
 
 ## Tabla de Contenido
-1. [Descripción de producto](#descripcion)
-2. [Descripción funcional](#descripcion-func)
+1. [Herramientas utilizadas](#herramientas)
+2. [Descripción de producto](#descripcion)
+3. [Descripción funcional](#descripcion-func)
     1. [Navegación](#navegacion)
-3. [Fundamentos del producto](#fundamentos)
+4. [Fundamentos del producto](#fundamentos)
     1. [Usuario objetivo](#usuario)
     2. [Research](#research)
     3. [Problemas a resolver para el usuario](#problemas)
-4. [Planeación](#planeacion)
+5. [Planeación](#planeacion)
+
+## <a name="herramientas"></a> Herramientas utilizadas:
+- Api de Mercado Libre para desplegar productos
+- Api de PayPal como forma de pago
+- Firebase para autenticación de usuario por medio de google
+- Template
+- Ajax
+- SPA
+- Responsive 
 
 ## <a name="descripcion"></a> Descripción de producto:
 
@@ -23,6 +38,8 @@
     - Visualizar el carrito de compras con los productos seleccionados.
     - Poder pagar la orden mediante paypal, uno de los métodos de pago en línea, más seguros y accesibles vía web.
     - Confirmar compra.
+- Proyecto desarrollado para Laboratoria
+
 ## <a name="descripcion-func"></a> Descripción funcional:
 
 - Interfaz intuitiva y de flujo sencillo para el usuario por medio de diferentes secciones:
@@ -33,6 +50,7 @@
     - Botón de pago Paypal
     - En el footer encontramos formas de contacto y links a social     media.
     - Uso de APIs.
+	- Routing, componente que permite que el contenido se desplegue segun la url (SPA)
     - Términos y condiciones.
 
 - <a name="navegacion"></a> Acerca de la navegación:
@@ -119,6 +137,9 @@ Se tiene una retrospectiva y feedback diarios para ver lista de actividades que 
 			- Instagram
 			- Facebook
 			- Twitter
+	
+	## <a name="sketching"></a> Presentación ##
+	https://docs.google.com/presentation/d/1vcHdZ98FJUwKXecc59nS1Ty4rDqQy4sRnjPUItmau-g/edit?ts=5aa89972#slide=id.p
 
 --------------
 Strongly Typed by HTML5 UP
