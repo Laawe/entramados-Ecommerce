@@ -1,18 +1,33 @@
 # ENTRAMADOS e-comerce #
+
+### Vista previa 
+
+<img src=assets/img/screencapture.jpg>
+
 ### V1.0.0
 
 <img src=assets/img/logo-entramados.jpg>
 
 
 ## Tabla de Contenido
-1. [Descripción de producto](#descripcion)
-2. [Descripción funcional](#descripcion-func)
+1. [Herramientas utilizadas](#herramientas)
+2. [Descripción de producto](#descripcion)
+3. [Descripción funcional](#descripcion-func)
     1. [Navegación](#navegacion)
-3. [Fundamentos del producto](#fundamentos)
+4. [Fundamentos del producto](#fundamentos)
     1. [Usuario objetivo](#usuario)
     2. [Research](#research)
     3. [Problemas a resolver para el usuario](#problemas)
-4. [Planeación](#planeacion)
+5. [Planeación](#planeacion)
+
+## <a name="herramientas"></a> Herramientas utilizadas:
+- Api de Mercado Libre para desplegar productos
+- Api de PayPal como forma de pago
+- Firebase para autenticación de usuario por medio de google
+- Template
+- Ajax
+- SPA
+- Responsive 
 
 ## <a name="descripcion"></a> Descripción de producto:
 
