@@ -50,6 +50,7 @@
     - Botón de pago Paypal
     - En el footer encontramos formas de contacto y links a social     media.
     - Uso de APIs.
+	- Routing, componente que permite que el contenido se desplegue segun la url (SPA)
     - Términos y condiciones.
 
 - <a name="navegacion"></a> Acerca de la navegación:
@@ -136,6 +137,9 @@ Se tiene una retrospectiva y feedback diarios para ver lista de actividades que 
 			- Instagram
 			- Facebook
 			- Twitter
+	
+	## <a name="sketching"></a> Presentación ##
+	https://docs.google.com/presentation/d/1vcHdZ98FJUwKXecc59nS1Ty4rDqQy4sRnjPUItmau-g/edit?ts=5aa89972#slide=id.p
 
 --------------
 Strongly Typed by HTML5 UP
