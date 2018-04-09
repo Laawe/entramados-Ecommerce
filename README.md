@@ -2,7 +2,7 @@
 
 ### Vista previa 
 
-<img src=assets/img/screencapture.jpg>
+<img src=assets/img/screencapture.png>
 
 ### V1.0.0
 
