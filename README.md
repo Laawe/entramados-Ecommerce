@@ -38,6 +38,8 @@
     - Visualizar el carrito de compras con los productos seleccionados.
     - Poder pagar la orden mediante paypal, uno de los métodos de pago en línea, más seguros y accesibles vía web.
     - Confirmar compra.
+- Proyecto desarrollado para Laboratoria
+
 ## <a name="descripcion-func"></a> Descripción funcional:
 
 - Interfaz intuitiva y de flujo sencillo para el usuario por medio de diferentes secciones:
