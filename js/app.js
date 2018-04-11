@@ -255,9 +255,13 @@ function getDataML() {
 			let index = 15;
 			data['results'].forEach(element => {
 				var photo = element.thumbnail.replace('I', 'O')
+				var title = element.title;
+				title = title.split(" ");
+				title = title.slice(0, 7);
+				title = title.join(" ")
 				var product = {}
 				product['id'] = index
-				product['title'] = element['title']
+				product['title'] = title
 				product['price'] = element['price']
 				product['photo'] = photo
 				product['state'] = element['seller_address']['state']['name']
