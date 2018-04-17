@@ -3,9 +3,6 @@
 
 
 ### Vista previa 
-
-<img src=assets/img/screencapture.png>
-
 ### V1.0.0
 
 ![entramados](https://user-images.githubusercontent.com/32857528/38595904-0671e49a-3d14-11e8-9214-45ef7d1d1668.png)
