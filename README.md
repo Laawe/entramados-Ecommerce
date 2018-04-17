@@ -1,4 +1,6 @@
-# ENTRAMADOS e-comerce #
+
+# ENTRAMADOS e-comerce 
+
 
 ### Vista previa 
 
@@ -184,3 +186,4 @@ Credits:
 		Respond.js (j.mp/respondjs)
 		jquery.dropotron (@ajlkn)
 		Skel (skel.io)
+
