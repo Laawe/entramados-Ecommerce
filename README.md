@@ -139,7 +139,8 @@ Se tiene una retrospectiva y feedback diarios para ver lista de actividades que 
 	
 	## <a name="sketching"></a> Presentación ##
 	https://docs.google.com/presentation/d/1vcHdZ98FJUwKXecc59nS1Ty4rDqQy4sRnjPUItmau-g/edit?ts=5aa89972#slide=id.p
-
+	
+# ENTRAMADOS e-comerce 
 --------------
 Strongly Typed by HTML5 UP
 html5up.net | @ajlkn
